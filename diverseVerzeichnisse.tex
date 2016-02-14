@@ -1,0 +1,36 @@
+\begin{absolutelyNoPageBreak}
+	% Abbildungsverzeichnis
+	%\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+	%\listoffigures
+	\begingroup
+	\renewcommand*{\addvspace}[1]{}
+	\phantomsection
+	\addcontentsline{toc}{section}{\listfigurename}
+	\listoffigures
+	\newpage
+	\phantomsection
+	\addcontentsline{toc}{section}{\listtablename}
+	\listoftables
+	%\phantomsection
+	%\addcontentsline{toc}{section}{\lst}
+	\endgroup
+	
+	\renewcommand{\lstlistlistingname}{Listingverzeichnis}
+	\renewcommand{\lstlistingname}{Listingverzeichnis}
+	\addcontentsline{toc}{section}{\lstlistingname}
+	\lstlistoflistings
+	
+	%%% Tabellenverzeichnis %%%
+	%\addcontentsline{toc}{section}{Tabellenverzeichnis}
+	%\listoftables
+	
+	
+	%%% Listenverzeichnis %%%
+	%\addcontentsline{toc}{section}{Listingverzeichnis}
+	%\lolnoheading
+\end{absolutelyNoPageBreak}
+\pagebreak 
+
+%%% Abkürzungsverzeichnis %%%
+\printglossary[title=Abkürzungsverzeichnis,type=symbols,style=altlongragged4col,nogroupskip]
+\pagebreak

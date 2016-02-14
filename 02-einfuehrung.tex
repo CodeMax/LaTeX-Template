@@ -1,0 +1,85 @@
+\section{Oft genutzte TexAusdrücke und Regeln} \label{sec:ebene1Kapitel}
+\subsection{Ebene 2 Unterkapitel} \label{sec:ebene2Unterkapitel}
+\subsubsection{Ebene 3 Unterkapitel} \label{sec:ebene3Unterkapitel1}
+\subsubsection{Ebene 3 Unterkapitel} \label{sec:ebene3Unterkapitel2}
+\paragraph{Ebene 4 Unterkapitel} \label{sec:ebene4Unterkapitel1}
+\paragraph{Ebene 4 Unterkapitel} \label{sec:ebene4Unterkapitel2}
+
+ % Kommentar
+
+Silbentrennung:		  	Laufzeitumge\-bung					\\
+Abkürzendes Punktum:	bspw.\ - ggf.\ - bzw.\				\\
+Hervorgehobener Text:	\emph{hervorgehoben}				\\
+Kursiver Text:			\textit{kursiv}						\\
+Abkürzung 1:			\gls{latex}							\\
+Abkürzung 2:			\gls{tpl}							\\
+Referenz Sektion: 		\ref{sec:ebene1Kapitel}				\\
+Referenz auf Appendix:	\ref{app:appendixA}					\\
+Referenz auf Abbildung: \ref{fig:imageExample}				\\
+Referenz auf Tabelle:	\ref{tab:tableExample}				\\
+Referenz auf Listing:	\ref{lst:listingExample}			\\
+Zitat 1:				\cite[vgl.][]{SAPNetweaverPortal12}	\\
+Zitat 2:				\cite[vgl. Seite 5f.]{jsr362}		\\
+Anführungszeichen:		"`Example"'							\\
+Unterstrich:			Under\_score						\\
+Zeilenumbruch:			\\
+
+Zitat:
+\begin{quote}
+	"`[...] Eine 20 Jahre alte Technologie [...], die ständig verbessert wurde und die ein Arbeitspferd ist, ist nicht mehr gut genug, um daraus Cloud-Anwendungen zu basteln, die mit Salesforce.com konkurrieren sollen."' - Hasso Plattners\footnote{Hasso Plattners ist einer der Mitbegründer von SAP im Jahre 1972. Bis in das Jahr 2003 stand er als Vorstandsvorsitzender an der Spitze von SAP und ist mittlerweile Vorsitzender des Aufsichtsrats \cite{whoswho}.}
+\end{quote} 
+
+Liste 1:
+\begin{itemize}
+	\item Item1
+	\item Item2
+	\item Item3
+\end{itemize}
+
+Liste 2:
+\begin{description}
+	\item \hspace{2cm} Item1 
+	\item \hspace{2cm} Item2
+	\item \hspace{2cm} Item3
+\end{description}
+
+Figure:
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1.0\linewidth]{img/imageExample}
+	\caption{Bildunterschrift}
+	\label{fig:imageExample}
+\end{figure}
+
+Table:
+\begin{table}[!htb]
+	\centering
+	\begin{tabular}{*4{>{\raggedright\arraybackslash}p{3.3cm}p{3.6cm}p{2.5cm}p{3.6cm}}} %p{2.7cm}p{3.5cm}p{2.8cm}p{3.7cm}
+		\hline a & b & c & d \\
+		\hline d & c & b & a \\
+		\hline
+	\end{tabular} 
+	\caption{Tabellenunterschrift}
+	\label{tab:tableExample}
+\end{table}
+
+Listing:
+\begin{lstlisting}[caption={Listingunterschrift, angelehnt an {\cite[vgl. Seite 45]{busch2009rich}}}, label=lst:listingExample]
+<h:outputText id="id" value="#{value.components}"/>
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Listingunterschrift, Quelle: {\cite{personalization03}}}, label=lst:listingExample2]
+<application>
+	<reference>
+	</reference>
+</application>
+\end{lstlisting}
+
+
+Fusszeile:
+\footnote{Diese Bausteinstruktur ist den beigefügten Prototypen und dem Aufbau einer 3-Schichten-Architektur nachempfunden.}
+oder
+\footnote{Text \cite[vgl. Seite 501]{musciano2002html}.}
+
+Pagebreak:		\pagebreak
+

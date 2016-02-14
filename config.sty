@@ -1,0 +1,119 @@
+\ProvidesPackage{config}[2012/04/26]
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc} % deutsche Umlaute tippen
+\usepackage{tocloft}
+
+\usepackage{epsfig}
+\usepackage{makeidx}
+\usepackage{rotating}
+\usepackage{caption}
+\usepackage{tabularx}
+\usepackage[toc,page]{appendix}
+\usepackage{url}
+
+%packages for listing code
+\usepackage{color, xcolor}
+\usepackage{listings}
+\usepackage{courier}
+
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage[nopostdot,toc,nomain,symbols]{glossaries}
+\usepackage{glossary-longragged}
+\usepackage[style=alphabetic-verb, natbib=true, doi=true, backend=biber]{biblatex}
+
+
+
+%Für die Fixierung der Bilder
+\usepackage{float}
+\restylefloat{figure}
+
+% Hiermit wird automatisch ein break nach jeder Section gesetzt
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
+
+
+\newenvironment{absolutelyNoPageBreak}{\par\nobreak\vfil\penalty0\vfilneg\vtop\bgroup}{\par\xdef\tpd{\the\prevdepth}\egroup\prevdepth=\tpd}
+
+\usepackage[
+  plainpages=false,
+  unicode=true,          % non-Latin characters in Acrobat?s bookmarks
+  pdftitle=,
+  pdfauthor=GSM OpenBTS Handover Action Group,
+  pdftoolbar=true,        % show Acrobat?s toolbar?
+  pdfmenubar=true,        % show Acrobat?s menu?
+  pdffitwindow=true,     % window fit to page when opened
+  pdfstartview={FitV},    % fits the width of the page to the window
+  pdfnewwindow=true,      % links in new window
+  colorlinks=true,       % false: boxed links; true: colored links
+  linkcolor=black,          % color of internal links
+  citecolor=black,        % color of links to bibliography
+  filecolor=black,      % color of file links
+  urlcolor=black,          % color of external links
+  hyperfootnotes=false,
+  bookmarks,
+]{hyperref}
+
+%Konfigutation für Codelisting
+%see: http://stackoverflow.com/questions/741985
+
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+%\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javapurple}{rgb}{0,0,0} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{
+	language=Java,
+	basicstyle=\footnotesize\ttfamily, % Standardschrift
+	numbers=left,               % Ort der Zeilennummern
+	numberstyle=\tiny,          % Stil der Zeilennummern
+	numbersep=5pt,              % Abstand der Nummern zum Text
+	tabsize=2,                  % Groesse von Tabs
+	keywordstyle=\color{javapurple},%\bfseries,
+	stringstyle=\color{javared},
+	%commentstyle=\color{javagreen},
+	morecomment=[s][\color{javadocblue}]{/**}{*/},
+	extendedchars=true,         %
+	breaklines=true,            % Zeilen werden Umgebrochen
+	stringstyle=\ttfamily, 		% Farbe der String
+	showspaces=false,           % Leerzeichen anzeigen ?
+	showtabs=false,             % Tabs anzeigen ?
+	xleftmargin=17pt,
+	framexleftmargin=17pt,
+	framexrightmargin=5pt,
+	framexbottommargin=4pt,
+	showstringspaces=false        
+}
+
+\lstloadlanguages{Java}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{10pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white,singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+
+%titelseite kopf
+\titlehead{
+\begin{flushright}
+\includegraphics[width=70mm]{img/company}%
+\includegraphics[width=70mm]{img/hm}%
+\end{flushright}
+\begin{center}
+\vspace*{20mm}
+{\Large Hochschule München}\\
+{\large Fakultät für Mathematik und Informatik}
+\end{center}
+}
+
+%titelseite fuß
+\publishers{
+\parbox{\textwidth}{
+\vspace*{25mm}
+\large
+\begin{tabularx}{0.8\textwidth}{lX}
+\textbf{Abgabe:} &      \abgabe \\[1em]
+\textbf{betreut von:} & \betreuera \\[1em]
+& \betreuerb
+\end{tabularx}
+}}\normalsize

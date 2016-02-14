@@ -1,0 +1,78 @@
+\documentclass[bibtotocnumbered,titlepage]{scrartcl}
+\usepackage{config}
+\makeatletter
+\newcommand*{\lolnoheading}{\@starttoc{lol}}
+\makeatother
+\interfootnotelinepenalty=10000
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}
+	{-2.5ex\@plus -1ex \@minus -.25ex}
+	{1.25ex \@plus .25ex}
+	{\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+
+
+%%% Front Page %%%
+\title{Title}
+\subject{Bachelorthesis}
+\author{Vorname Nachname, B.Winf.}
+\date{}
+\newcommand{\abgabe}{dd Month 2016}
+\newcommand{\betreuera}{Prof. Dr. Name \textit{Fachhochschule München}}
+\newcommand{\betreuerb}{Herr Name \textit{Unternehmen GmbH}}
+
+
+%%% Glossar %%%
+\makeglossaries
+\newglossaryentry{latex}{name=LATEX, description={Lamport TeX}}
+\newglossaryentry{tpl}{name=TPL, description={Template}}
+
+
+%% Config %%
+\renewcommand{\cftfigpresnum}{Abb. }
+\renewcommand{\cfttabpresnum}{Tab. }
+\renewcommand{\cftfigaftersnum}{:}
+\renewcommand{\cfttabaftersnum}{:}
+\setlength{\cftfignumwidth}{2cm}
+\setlength{\cfttabnumwidth}{2cm}
+\setlength{\cftfigindent}{0cm}
+\setlength{\cfttabindent}{0cm}
+
+
+%%% Abbildungsverzeichnis %%%
+\addbibresource{bibfile.bib}
+
+
+
+\begin{document}
+\renewcommand{\figurename}{Abb.}
+\renewcommand{\tablename}{Tab.}
+
+\maketitle
+\input{versicherungUndDanksagung}
+\pagebreak
+\begingroup
+\begin{absolutelyNoPageBreak}
+\begin{abstract}
+	\section*{Abstract}
+	Abstract
+	
+\end{abstract}
+
+\end{absolutelyNoPageBreak}
+\endgroup
+\pagebreak 
+\tableofcontents
+\pagebreak 
+
+\input{diverseVerzeichnisse}
+\input{01-einleitung}
+\input{02-einfuehrung}
+\input{03-implementierung}
+\input{04-bewertung}
+\input{05-schluss}
+
+\include{literaturverzeichnis}
+\end{document}
